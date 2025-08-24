@@ -1,0 +1,13 @@
+
+<div class="myApp">
+  <div class="myinput">
+    <span>Enter your name</span>
+    <input type="text" [(ngModel)]="name" placeholder="Enter your name">
+  </div>
+  <div class="Submitbtn">
+    <button (click)="getBackendData()">Submit</button>
+  </div>
+  <div *ngIf="message">
+    {{message | myPipe}}
+  </div>
+</div>

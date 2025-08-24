@@ -1,0 +1,31 @@
+<h1 class="heading">{{heading}}</h1>
+<button (click)="getProducts()">Get Products</button>
+
+<table *ngIf="products && products.length">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of products">
+      <td>{{ item.name }}</td>
+      <td>{{ item.category }}</td>
+      <td>{{ item.price }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="openInput()">Open</button>
+
+<div *ngIf="showInput" style="margin-top: 1em;">
+  <input [(ngModel)]="inputValue" placeholder="Type something..." />
+</div>
+
+<div *ngIf="addedValue">
+  <strong>Added Value:</strong> {{ addedValue }}
+</div>
+<button (click)="startTimer()">Start Timer</button>
+    <div>{{ timerValue }}</div>
